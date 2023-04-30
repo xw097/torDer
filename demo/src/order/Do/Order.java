@@ -12,11 +12,16 @@ public class Order extends Train{
 
     private Date creatOrderTime;
 
-    public Order(String id, String name, Date startTime, Date endTime, String[] arr, int seaNum) {
+    public Order(String id, String name, Date startTime, Date endTime, Node arr, int seaNum) {
         super(id, name, startTime, endTime, arr, seaNum);
     }
 
-    public Order(String id, String name, Date startTime, Date endTime, String[] arr, int seaNum, String sfz, String id1, float money, Date creatOrderTime) {
+    public Order() {
+        super();
+        return;
+    }
+
+    public Order(String id, String name, Date startTime, Date endTime, Node arr, int seaNum, String sfz, String id1, float money, Date creatOrderTime) {
         super(id, name, startTime, endTime, arr, seaNum);
         this.sfz = sfz;
         this.id = id1;

@@ -2,7 +2,7 @@ package order.Do;
 
 import java.util.Date;
 
-public class Train {
+public class  Train {
 
     private String id;
 
@@ -12,17 +12,23 @@ public class Train {
 
     private Date endTime;
 
-    private String[] arr;//站点
+    private Node arr;//站点
+
+
 
     private int seaNum;
 
-    public Train(String id, String name, Date startTime, Date endTime, String[] arr, int seaNum) {
+    public Train(String id, String name, Date startTime, Date endTime, Node arr, int seaNum) {
         this.id = id;
         this.name = name;
         this.startTime = startTime;
         this.endTime = endTime;
         this.arr = arr;
         this.seaNum = seaNum;
+    }
+
+    public Train() {
+
     }
 
     public String getId() {
@@ -57,11 +63,11 @@ public class Train {
         this.endTime = endTime;
     }
 
-    public String[] getArr() {
+    public Node getArr() {
         return arr;
     }
 
-    public void setArr(String[] arr) {
+    public void setArr(Node arr) {
         this.arr = arr;
     }
 
@@ -71,5 +77,17 @@ public class Train {
 
     public void setSeaNum(int seaNum) {
         this.seaNum = seaNum;
+    }
+
+    @Override
+    public String toString() {
+        return "Train{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", arr=" + arr.toString() +
+                ", seaNum=" + seaNum +
+                '}';
     }
 }
