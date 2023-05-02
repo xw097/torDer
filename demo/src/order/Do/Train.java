@@ -1,5 +1,6 @@
 package order.Do;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class  Train {
@@ -12,9 +13,7 @@ public class  Train {
 
     private Date endTime;
 
-    private Node arr;//站点
-
-
+    private Node arr;
 
     private int seaNum;
 
@@ -79,15 +78,25 @@ public class  Train {
         this.seaNum = seaNum;
     }
 
+    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss ");
     @Override
     public String toString() {
         return "Train{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", startTime=" + startTime +
-                ", endTime=" + endTime +
-                ", arr=" + arr.toString() +
-                ", seaNum=" + seaNum +
+                ", 列车名称='" + name + '\'' +
+                ", 发车时间=" + format.format(startTime) + "\n" +
+                ", 到站时间=" + format.format(endTime) +
+                ", 站点信息:" + showNode(arr) +
+                ", 座位数=" + seaNum +
                 '}';
+    }
+    public String showNode(Node node){
+        String list = "";
+        System.out.println(node.getName());
+        for(int i=0;i<6;i++){
+            list = list + "站点:"+node.getName()+"\n"+" 到达时间:"+"2023-04-22 4:00:00 ";
+            node = node.getNext();
+        }
+        return list;
     }
 }
